@@ -60,6 +60,10 @@ pilot:
     control_share: 0.5
     randomized: true
   rollout: [0.10, 0.25, 0.50]     # 4 → 10 → 20 nhân viên. Hai bậc đầu dự trù tối thiểu một tuần/bậc, chờ rà soát an toàn trước mỗi lần tăng.
+  rollout_gate: >-
+    Chỉ tăng bậc khi không luật dừng nào kích hoạt và thời gian xem lại đo thật (staff_review_decision) trung bình ≤ 4,2 phút/ca.
+    Mốc 4,2 phút là hoà vốn khi xem lại 100% với làm lại 15,3 phút/ca; nếu thời gian làm lại đo thật ≤ 9 phút/ca thì mốc là 4,5 phút (simulated).
+    Vượt mốc thì giữ nguyên bậc và giảm tỉ lệ xem lại theo bậc trước khi xét lại.
   primary_metric:
     name: dong_trong_24h_khong_mo_lai_7_ngay
     baseline: 0.70
@@ -105,7 +109,7 @@ pilot:
       THÌ Giám đốc vận hành ra lệnh khóa luồng hoàn tự động ngay, áp dụng trong tối đa 30 phút và giao Kỹ sư trưởng agent đối soát giao dịch, đính chính với khách qua CSKH
       KHÔNG THÌ tiếp tục đối chiếu thông báo với sổ cái.
     - >-
-      NẾU tỉ lệ mở lại trong 7 ngày ở nhóm trợ lý vượt 6% ở bất kỳ bậc nào, hoặc cao hơn đối chứng ít nhất 2 điểm phần trăm từ bậc 0.25 trở lên (từ 10 nhân viên dùng trợ lý; ở bậc 0.10 chỉ có 4 cụm nên lệch 2 điểm có thể chỉ do ngẫu nhiên, chỉ dùng trần 6%), tính theo cửa sổ quan sát an toàn
+      NẾU tỉ lệ mở lại trong 7 ngày ở nhóm trợ lý vượt 6% ở bất kỳ bậc nào, hoặc cao hơn đối chứng ít nhất 2 điểm phần trăm từ bậc 0.50 khi mỗi nhánh đã có ≥ 1.080 ca theo dõi đủ 7 ngày (≥ 54 ca/nhân viên, tương đương ≥ 520 mẫu hiệu dụng với ICC 0,02; bậc 0.10 và 0.25 có trần 200 và 500 mẫu hiệu dụng nên chỉ dùng trần 6%), tính theo cửa sổ quan sát an toàn
       TRONG 3 lần kiểm tra hằng ngày liên tiếp có đủ dữ liệu cho ngưỡng tương ứng
       THÌ Giám đốc vận hành tắt trợ lý trong tối đa 30 phút sau lần kiểm tra thứ ba và Kỹ sư trưởng agent rà các trace trong 2 ngày
       KHÔNG THÌ giữ lịch giám sát hằng ngày, hoãn tăng bậc nếu chưa đủ dữ liệu an toàn.
