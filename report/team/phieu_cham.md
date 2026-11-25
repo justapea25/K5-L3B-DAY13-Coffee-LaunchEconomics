@@ -2,20 +2,20 @@
 
 Nhóm số n chấm nhóm số n + 1; nhóm cuối chấm nhóm 1. Chấm theo bằng chứng trong hồ sơ, không theo cách trình bày: một đề xuất No-go có lý do bằng số được điểm cao hơn một đề xuất Go bỏ qua con số bất lợi.
 
-- Nhóm chấm (hội đồng): ...
-- Nhóm được chấm: ...
+- Nhóm chấm (hội đồng): Coffee · L3B
+- Nhóm được chấm: ABCD · L3B
 
-| Tiêu chí | 0 điểm | 5 điểm | 10 điểm | Điểm | Lý do (có số) |
-| --- | --- | --- | --- | ---: | --- |
-| Đề xuất khớp bằng chứng | Mâu thuẫn với số của chính nhóm | Khớp nhưng bỏ qua một con số bất lợi | Khớp, nêu cả con số bất lợi và cách xử lý | ... | ... |
-| Số giả lập và phạm vi | Không nhãn; phạm vi "mọi yêu cầu" | Có nhãn hoặc có thu hẹp phạm vi | Nhãn ở mọi số giả lập; phạm vi thu hẹp có lý do bằng số | ... | ... |
-| Pilot ra được quyết định | Không đối chứng hoặc thiếu cỡ mẫu | Đủ cỡ mẫu, luật dừng chung chung | Tách được tác động, đủ mẫu, luật dừng có ngưỡng, thời hạn, người có quyền dừng | ... | ... |
-| **Tổng** | | | | **... / 30** | |
+| Tiêu chí                     | 0 điểm                                  | 5 điểm                                    | 10 điểm                                                                                            |            Điểm | Lý do (có số)                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------------------------ | ----------------------------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Đề xuất khớp bằng chứng  | Mâu thuẫn với số của chính nhóm    | Khớp nhưng bỏ qua một con số bất lợi | Khớp, nêu cả con số bất lợi và cách xử lý                                                  |                10 | Go có điều kiện khớp với chi phí trong phạm vi (2.696 đ và 8.221 đ, dưới 12.000 đ). Nhóm nêu cả hai con số bất lợi: power 64% ở mức 5 điểm và kịch bản xem lại 100% lên 12.415 đ. Cách xử lý đã viết trước: luật dừng khi chi phí biến đổi vượt 8.000 đ/việc trong 2 tuần, và giữ nguyên bước rollout nếu tuần đầu đã vượt. |
+| Số giả lập và phạm vi     | Không nhãn; phạm vi "mọi yêu cầu"   | Có nhãn hoặc có thu hẹp phạm vi       | Nhãn ở mọi số giả lập; phạm vi thu hẹp có lý do bằng số                                  |                10 | Phạm vi thu hẹp về nội địa + hàng nặng có lý do bằng số: 2.696 đ và 8.221 đ mỗi việc thành công, đều dưới 12.000 đ. Nhóm ghi rõ dữ liệu là giả lập và giải thích đúng cách tính: 2.696 đ = chi phí toàn bộ 824 yêu cầu nội địa, kể cả lần chạy lỗi, chia cho 783 việc thành công.                                                  |
+| Pilot ra được quyết định | Không đối chứng hoặc thiếu cỡ mẫu | Đủ cỡ mẫu, luật dừng chung chung      | Tách được tác động, đủ mẫu, luật dừng có ngưỡng, thời hạn, người có quyền dừng |                10 | Chia theo nhân viên 20 + 20, phân tầng theo depot, đối chứng cùng kỳ; 299 yêu cầu/người cho 859 mẫu hiệu dụng (80% power ở 6 điểm). Luật dừng viết trước có ngưỡng (8.000 đ/việc), thời hạn (2 tuần liên tiếp) và người hành động (PM trợ lý).                                                                                                  |
+| **Tổng**                |                                           |                                             |                                                                                                      | **30 / 30** |                                                                                                                                                                                                                                                                                                                                                                                           |
 
-**Quyết định của hội đồng:** Go · Go có điều kiện · No-go (giữ một)
+**Quyết định của hội đồng:** Go có điều kiện
 
-**Lý do:** ...
+**Lý do:** Kinh tế trong phạm vi có lợi (nội địa 2.696 đ, hàng nặng 8.221 đ so với 12.000 đ, simulated), thiết kế pilot tách được tác động và luật dừng đã viết trước. Điều kiện là hoàn tất các bước nhóm đã nêu trước khi mở pilot: kiểm tra chống hoàn trùng, ghi được event ở cả hai nhánh và đủ mẫu theo thiết kế.
 
-**Một câu hỏi cho đội trình:** ...
+**Một câu hỏi cho đội trình:** Nếu phải xem lại 100% số ca thì khi nào dừng? Luật đó đã được viết trước chưa?
 
-**Câu trả lời của đội trình (ghi lại tại buổi):** ...
+**Câu trả lời của đội trình (ghi lại tại buổi):** Có. Kế hoạch pilot đã ghi trước: nếu chi phí biến đổi vượt 8.000 đ mỗi việc thành công trong hai tuần liên tiếp, quản lý sản phẩm dừng thu mẫu chính, thu hẹp về nội địa và giới hạn tối đa hai lượt chạy. Nếu tuần đầu đã vượt ngưỡng, nhóm giữ nguyên mức rollout để rà soát, chưa tăng bước. Nhóm cũng trả lời đúng hai câu khác: chi phí 2.696 đ chia cho 783 việc thành công trong 824 yêu cầu nội địa, tử số gồm cả lần chạy lỗi; chia theo nhân viên để tránh mang cách làm của trợ lý sang ca đối chứng, đánh đổi là power 64% ở mức 5 điểm.
