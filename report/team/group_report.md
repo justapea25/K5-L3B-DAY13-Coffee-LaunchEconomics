@@ -33,7 +33,18 @@ Cách làm: mọi con số tính từ `src/lab13.py` trên hai file CSV giả l�
 - **Lỗi:** đồng thuận **18/20 (90%)**; 5 ca khắc phục đủ 5 loại, mỗi ca có event, ngưỡng và một vai trò phụ trách.
 - **Pilot:** chia theo nhân viên 20 + 20, mức chênh 6 điểm, ≥ 299 yêu cầu/người; power chỉ ~0,64 nếu tác động thật là 5 điểm; 5 luật dừng.
 - **Chỉ số trong đợt chạy thử:** 82,83% đóng trong 24 giờ và không mở lại; 27,12% gợi ý bị sửa hoặc bỏ; 4,25% mở lại trong 7 ngày.
-- **Đề xuất cuối:** **No-go tại lần rà soát này**, kèm điều kiện quay lại Gate 2a (kiểm thử ca 7, 17, 20; Giám đốc vận hành duyệt thiết kế 20 + 20 và chấp nhận power 0,64; chốt cách đo phút xem lại).
+- **Đề xuất cuối:** **Go có điều kiện** cho kế hoạch pilot `noi_dia` + `hang_nang`. Chỉ bắt đầu khi đủ 6 điều kiện:
+
+| Điều kiện trước pilot | Người phụ trách | Ngày kiểm tra (đề xuất) |
+| --- | --- | --- |
+| Kiểm thử chống hoàn tiền trùng (ca 20) | Kỹ sư trưởng agent | 03/12/2026 |
+| Xác nhận ghi sổ cái trước khi gửi thông báo hoàn tiền (ca 7) | Kỹ sư trưởng agent | 03/12/2026 |
+| Kiểm thử cập nhật bảng giá (ca 17) | Kế toán trưởng | 03/12/2026 |
+| Xác nhận 13 event và khả năng đo 5 chỉ số | Người kiểm số | 03/12/2026 |
+| Chốt cách đo phút xem lại, làm lại và điều kiện giảm xem lại | Trưởng nhóm CSKH | 03/12/2026 |
+| Phê duyệt thiết kế 20 + 20, 5 luật dừng, rollback và power ~0,64 ở 5 điểm | Giám đốc vận hành LogiX-VN | 04/12/2026 |
+
+- **Tiềm năng nhưng chưa đủ điều kiện bắt đầu:** trong phạm vi pilot, chi phí gồm xử lý thay và cố định ở 45.000 yêu cầu/tháng là 5.217 đ/yêu cầu, thấp hơn 56,5% so với 12.000 đ [simulated]; đây chưa phải tiết kiệm đã chứng minh. Hiện cả 6 điều kiện chưa đạt: ca 7, 17, 20 chưa kiểm thử, event chưa kiểm thử, thiết kế chưa được duyệt; nếu phải xem lại 100% thì lợi thế gần như mất hoặc âm (0,98–1,03× [simulated]). Thiếu bất kỳ điều kiện nào thì không bắt đầu và quay lại Gate 2a.
 - **Kết quả duyệt chéo:** cập nhật sau buổi Gate 2a.
 
 ## 5. Khó khăn và cách xử lý
@@ -56,6 +67,7 @@ Chi tiết đóng góp của từng thành viên nằm trong `TEAM.md` và báo 
 
 ## 7. Hạn chế và hướng cải thiện
 
+- Cả 6 điều kiện trước pilot đều chưa đạt, nên lịch bắt đầu 07/12/2026 phụ thuộc kết quả kiểm thử và phê duyệt. Cải thiện: kiểm thử ca 7, 17, 20 và 13 event trước ngày kiểm tra; không đạt thì lùi lịch và quay lại Gate 2a.
 - Chi phí xem lại và làm lại dựa trên phút **simulated**; tuần đầu pilot phải thay bằng phút đo thật từ `staff_review_decision` và `staff_rework_completed`.
 - Đợt chạy thử không có nhóm đối chứng, nên 82,83% chỉ là mức đo được, chưa phải tác động của trợ lý.
 - Power ~0,64 ở mức chênh 5 điểm: pilot có thể bỏ sót tác động nhỏ. Cải thiện bằng cách tăng số nhân viên tham gia hoặc kéo dài thời gian thu mẫu.

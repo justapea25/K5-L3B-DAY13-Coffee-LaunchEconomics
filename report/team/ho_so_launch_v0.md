@@ -1,6 +1,6 @@
 # Hồ sơ launch v0 · Trợ lý hoàn phí LogiX-VN · Gate 2a
 
-Nhóm Coffee · Lớp L3B · Bản rà soát 0.3
+Nhóm Coffee · Lớp L3B · Bản rà soát 0.4
 
 Phạm vi đề xuất gồm yêu cầu nội địa (`noi_dia`) và hàng nặng (`hang_nang`). Số có nhãn `simulated` dùng dữ liệu giả lập của lab.
 
@@ -12,7 +12,7 @@ Phạm vi đề xuất gồm yêu cầu nội địa (`noi_dia`) và hàng nặn
 | 4 · Chỉ số chính, chỉ số dùng, chỉ số an toàn | Mẫu chạy thử ghi nhận **82,83%** đóng trong 24 giờ và không mở lại trong 7 ngày (994/1.200), **27,12%** gợi ý bị sửa hoặc bỏ (48/177) và **4,25%** mở lại trong 7 ngày (51/1.200). Tỉ lệ mở lại phản ánh một phần lỗi lọt đến khách. Đã hoàn thành đặc tả **5 chỉ số và 13 event** có `request_id` và `trace_id`. Cần kiểm thử các event trước pilot. [Đặc tả chỉ số](chi_so.md) | Xong, có bằng chứng | Người kiểm số |
 | 5 · Bảng lỗi và cách khắc phục | Hai bộ nhãn độc lập trùng **18/20 (90%)**. Hai ca khác nhau (**6 và 8**) đã có quy tắc thống nhất. Bộ nhãn thống nhất khớp **20/20** với nhãn tham khảo của lab, vượt ngưỡng **16/20** trong rubric C3. Bảng có **5** ca khắc phục, mỗi loại một ca. Ưu tiên kiểm thử ca **7, 17 và 20**. [Bảng CP3](bang_loi.md) · [Nhãn tham khảo](../../docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md#nhãn-tham-khảo-cho-20-ca) | Xong, có bằng chứng | Người gắn nhãn 2 kiêm giữ hồ sơ |
 | 6 · Thiết kế pilot | Ngẫu nhiên theo nhân viên, phân tầng theo depot, **20 dùng trợ lý + 20 đối chứng** cùng kỳ. Thu tối thiểu **299 yêu cầu/người**, tức **5.980 thực tế/nhóm** và **859,2 hiệu dụng/nhóm**. Power **80%** ở chênh lệch **6 điểm %**, khoảng **64%** ở **5 điểm %**. Dự kiến bắt đầu **07/12/2026**, rà soát **11/01/2027**. Chỉ kết luận khi đủ mẫu và đủ cửa sổ **8 ngày**. Trong **5** luật dừng, hoàn trùng và báo hoàn tất trước khi ghi sổ kích hoạt dừng ngay. Chờ Giám đốc vận hành duyệt. [Kế hoạch pilot](pilot_plan.yaml) | Chưa | Giám đốc vận hành LogiX-VN |
-| 7 · Rủi ro kinh tế và cách kiểm soát | Gấp đôi ca làm lại đưa CPS toàn mẫu lên **6.787 đ** (`simulated`). Xem lại 100% trong phạm vi pilot đưa CPS lên **11.743 đ** với 9 phút làm lại hoặc **12.415 đ** với 15,3 phút làm lại (`simulated`, chưa gồm xử lý thay và cố định). Khi khối lượng giảm một nửa, cố định tăng từ **1.185 lên 2.370 đ/việc thành công**. Đo phút xem lại thật, tỉ lệ làm lại và chi phí cả hệ thống theo tuần. Chỉ giảm xem lại theo bậc khi đạt điều kiện an toàn. [Rủi ro và hành động](chi_so.md#e2--rủi-ro-kinh-tế) | Giả lập | PM trợ lý hoàn phí |
+| 7 · Rủi ro kinh tế và cách kiểm soát | Gấp đôi ca làm lại đưa CPS toàn mẫu lên **6.787 đ** (`simulated`). Xem lại 100% trong phạm vi pilot đưa CPS lên **11.743 đ** với 9 phút làm lại hoặc **12.415 đ** với 15,3 phút làm lại (`simulated`, chưa gồm xử lý thay và cố định). Khi khối lượng giảm một nửa, cố định tăng từ **1.185 lên 2.370 đ/việc thành công** (`simulated`). Đo phút xem lại thật, tỉ lệ làm lại và chi phí cả hệ thống theo tuần. Chỉ giảm xem lại theo bậc khi đạt điều kiện an toàn. [Rủi ro và hành động](chi_so.md#e2--rủi-ro-kinh-tế) | Giả lập | PM trợ lý hoàn phí |
 
 <details>
 <summary>Cách đối chiếu số</summary>
@@ -25,14 +25,17 @@ Phạm vi đề xuất gồm yêu cầu nội địa (`noi_dia`) và hàng nặn
 
 </details>
 
-**Điều kiện quay lại Gate 2a** · Kỹ sư trưởng agent kiểm thử ca **7, 17 và 20** để xác nhận trợ lý báo hoàn tất sau khi ghi sổ, áp dụng đúng phiên bản bảng giá và ghi sổ tối đa **1** giao dịch cho mỗi khoản hoàn được phép. Người kiểm số kiểm thử việc đo **5 chỉ số từ 13 event** và đối soát thông báo với sổ cái. Giám đốc vận hành phê duyệt thiết kế **20 + 20** và **5** luật dừng, đồng thời chấp nhận power khoảng **64%** ở chênh lệch **5 điểm %**. Trưởng nhóm CSKH chốt cách đo phút xem lại, làm lại và điều kiện an toàn trước khi giảm tỉ lệ xem lại.
+**Điều kiện bắt buộc trước khi bắt đầu pilot** · Cả 6 điều kiện hiện **chưa đạt**. Ngày kiểm tra là đề xuất, đặt trước ngày dự kiến bắt đầu 07/12/2026. [Tiêu chí đạt trong kế hoạch pilot](pilot_plan.yaml)
 
-**Đề xuất · Đề xuất: GO CÓ ĐIỀU KIỆN (Conditional Go).**
+| Điều kiện | Đạt khi | Người phụ trách | Ngày kiểm tra |
+| --- | --- | --- | --- |
+| 1 · Chống hoàn tiền trùng (ca 20) | Gửi lại cùng một khoản hoàn, kể cả đồng thời, chỉ có tối đa **1** giao dịch ghi sổ thành công | Kỹ sư trưởng agent | 03/12/2026 |
+| 2 · Ghi sổ trước khi thông báo (ca 7) | Sổ cái lỗi 503 thì không báo hoàn tất và chuyển nhân viên; đối soát có **0** thông báo thiếu bản ghi thành công trước đó | Kỹ sư trưởng agent | 03/12/2026 |
+| 3 · Cập nhật bảng giá (ca 17) | Đổi bảng giá thì bộ nhớ đệm được làm mới, **0** ca kiểm thử dùng sai phiên bản | Kế toán trưởng | 03/12/2026 |
+| 4 · Event và chỉ số | **13** event có `request_id`, `trace_id`; tính được **5** chỉ số từ trace kiểm thử | Người kiểm số | 03/12/2026 |
+| 5 · Cách đo và xem lại | Chốt cách đo phút xem lại, làm lại và điều kiện an toàn trước khi giảm tỉ lệ xem lại | Trưởng nhóm CSKH | 03/12/2026 |
+| 6 · Phê duyệt thiết kế | Duyệt **20 + 20**, tối thiểu **299 yêu cầu/người**, **5** luật dừng, rollback; chấp nhận power khoảng **64%** ở chênh lệch **5 điểm %** | Giám đốc vận hành LogiX-VN | 04/12/2026 |
 
-Nhóm Coffee đề xuất phê duyệt kế hoạch pilot có kiểm soát cho phạm vi yêu cầu nội địa và hàng nặng. Kết quả phân tích kinh tế giả lập cho thấy chi phí ước tính khoảng 5.217 đ/yêu cầu, thấp hơn 56,5% so với mức 12.000 đ khi nhân viên tự xử lý. Tuy nhiên, đây chưa phải kết quả tiết kiệm đã được chứng minh trong thực tế.
+**Vì sao có điều kiện** · Tiềm năng kinh tế: **5.217 đ/yêu cầu**, thấp hơn **56,5%** so với **12.000 đ** (`simulated`), chưa phải mức tiết kiệm đã chứng minh. Bất lợi: xem lại 100% đưa CPS lên **11.743–12.415 đ**, bằng **0,98–1,03×** mốc nhân viên (`simulated`), nên lợi thế có thể mất; xử lý bằng đo phút thật và chỉ giảm xem lại khi đạt điều kiện an toàn. Pilot có thể bỏ sót tác động 5 điểm %. Rủi ro hoàn sai, hoàn trùng được chặn bằng điều kiện 1–3, **5** luật dừng và rollback trong 30 phút.
 
-Trước khi bắt đầu pilot, nhóm yêu cầu hoàn thành kiểm thử cơ chế chống hoàn tiền trùng, đối soát sổ cái trước khi gửi thông báo hoàn thành, xác nhận cập nhật bảng giá, kiểm thử hệ thống event và được Giám đốc vận hành phê duyệt thiết kế thử nghiệm 20 nhân viên sử dụng AI và 20 nhân viên đối chứng.
-
-Pilot chỉ được bắt đầu khi tất cả điều kiện an toàn bắt buộc được xác nhận. Trong quá trình thử nghiệm, nhóm áp dụng 5 luật dừng và cơ chế rollback để bảo vệ khách hàng và doanh nghiệp.
-
-Nếu các điều kiện không được đáp ứng, quyết định phê duyệt có điều kiện không có hiệu lực triển khai và nhóm phải quay lại Gate 2a để đánh giá lại.
+**Đề xuất · GO CÓ ĐIỀU KIỆN** cho kế hoạch pilot yêu cầu nội địa và hàng nặng: chỉ bắt đầu khi đủ cả **6** điều kiện; thiếu bất kỳ điều kiện nào thì không bắt đầu và quay lại Gate 2a.

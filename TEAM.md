@@ -12,7 +12,7 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Đậu Hoàng Minh | 2A202604011 | 26ai.minhdh4@vinuni.edu.vn | | Người viết code |
-|   2 | Đặng Minh Thu | | | | Người kiểm số, viết code từ CP3 |
+|   2 | Đặng Minh Thu | 2A202604009 | 26ai.thudm@vinuni.edu.vn | | Người kiểm số, viết code từ CP3 |
 |   3 | Trương Văn Hải | | | | Người gắn nhãn 1 |
 |   4 | Nguyễn Xuân Khánh Linh | | | | Người gắn nhãn 2 kiêm giữ hồ sơ |
 

@@ -33,6 +33,38 @@
 pilot:
   owner: "Giám đốc vận hành LogiX-VN"
   scope: "Chỉ noi_dia và hang_nang ở cả 12 depot (chi phí mỗi việc thành công 2.696 đ = 0,22× và 8.221 đ = 0,69× so với 12.000 đ, simulated). Loại quoc_te (22.515 đ = 1,88×, thành công 27,3%, lần chạy 3 chỉ ok 2,2%) và doi_tac (10.215 đ = 0,85×, có điều khoản riêng)."
+  gate_decision: "Go có điều kiện: chỉ bắt đầu khi mọi mục trong pre_start_conditions đạt. Thiếu bất kỳ mục nào thì không bắt đầu và quay lại Gate 2a."
+  pre_start_conditions:           # ngày check_by là đề xuất, đặt trước ngày dự kiến bắt đầu 2026-12-07
+    - id: chong_hoan_trung        # ca 20
+      pass_when: "Gửi lại cùng refund_intent_id, kể cả đồng thời, chỉ có tối đa 1 giao dịch ghi sổ thành công."
+      owner: "Kỹ sư trưởng agent"
+      check_by: "2026-12-03"
+      status: "Chưa"
+    - id: ghi_so_truoc_thong_bao  # ca 7
+      pass_when: "Khi API sổ cái trả 503 thì không gửi thông báo hoàn tất và chuyển nhân viên; đối soát có 0 thông báo hoàn tất thiếu bản ghi sổ thành công trước thời điểm gửi."
+      owner: "Kỹ sư trưởng agent"
+      check_by: "2026-12-03"
+      status: "Chưa"
+    - id: cap_nhat_bang_gia       # ca 17
+      pass_when: "Sau khi đổi bảng giá, bộ nhớ đệm được làm mới và 0 ca kiểm thử dùng sai price_table_version."
+      owner: "Kế toán trưởng"
+      check_by: "2026-12-03"
+      status: "Chưa"
+    - id: event_va_chi_so
+      pass_when: "13 event trong chi_so.md được ghi nhận với request_id và trace_id; tính được 5 chỉ số từ trace kiểm thử."
+      owner: "Người kiểm số"
+      check_by: "2026-12-03"
+      status: "Chưa"
+    - id: cach_do_va_xem_lai
+      pass_when: "Chốt bằng văn bản cách đo phút xem lại, làm lại và điều kiện an toàn trước khi giảm tỉ lệ xem lại (tỉ lệ sửa + bỏ dưới 15%, kiểm mẫu đạt, Giám đốc vận hành xác nhận)."
+      owner: "Trưởng nhóm CSKH"
+      check_by: "2026-12-03"
+      status: "Chưa"
+    - id: phe_duyet_thiet_ke
+      pass_when: "Phê duyệt thiết kế 20 + 20, tối thiểu 299 yêu cầu/người, 5 luật dừng, rollback; chấp nhận power khoảng 0,64 nếu tác động thật là 5 điểm; xác nhận 5 điều kiện còn lại đã đạt."
+      owner: "Giám đốc vận hành LogiX-VN"
+      check_by: "2026-12-04"
+      status: "Chưa"
   assignment:
     unit: "staff"
     control_share: 0.5
