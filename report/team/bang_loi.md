@@ -44,41 +44,44 @@ Nguồn [Đề bài Lab 13, mục Hai mươi ca lỗi](../../docs/Ngay13_Lab13_D
 
 | Ca | Nhãn Trương Văn Hải | Nhãn Nguyễn Xuân Khánh Linh | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |
-| 1 | | Do người dùng | | |
-| 2 | | Hệ thống | | |
-| 3 | | Ngữ cảnh | | |
-| 4 | | Giới hạn hệ thống | | |
-| 5 | | Ngầm | | |
-| 6 | | Ngữ cảnh | | |
-| 7 | | Hệ thống | | |
-| 8 | | Ngầm | | |
-| 9 | | Do người dùng | | |
-| 10 | | Ngữ cảnh | | |
-| 11 | | Giới hạn hệ thống | | |
-| 12 | | Ngầm | | |
-| 13 | | Giới hạn hệ thống | | |
-| 14 | | Do người dùng | | |
-| 15 | | Hệ thống | | |
-| 16 | | Ngữ cảnh | | |
-| 17 | | Ngầm | | |
-| 18 | | Ngữ cảnh | | |
-| 19 | | Giới hạn hệ thống | | |
-| 20 | | Hệ thống | | |
+| 1 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 2 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 3 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 4 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 5 | Ngầm | Ngầm | Có | Ngầm |
+| 6 | Do người dùng | Ngữ cảnh | Không | Do người dùng |
+| 7 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 8 | Hệ thống | Ngầm | Không | Hệ thống |
+| 9 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 10 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 11 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 12 | Ngầm | Ngầm | Có | Ngầm |
+| 13 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 14 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 15 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 16 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 17 | Ngầm | Ngầm | Có | Ngầm |
+| 18 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 19 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 20 | Hệ thống | Hệ thống | Có | Hệ thống |
 
-**Tỉ lệ đồng thuận** · Linh đã ghi đủ 20 nhãn, chờ bộ nhãn độc lập của Hải. Lấy số ca trùng chia 20 rồi nhân 100. Cần ít nhất 16/20 ca để đạt 80%.
+**Tỉ lệ đồng thuận:** 18 / 20 = 90% (đạt yêu cầu $\ge 80\%$).
 
 ## Quy tắc phân biệt cho các ca không trùng
 
-Sau khi so, mỗi ca khác nhãn ghi một quy tắc dựa trên dấu hiệu trong tình huống. Nếu trùng dưới 16/20, ghi định nghĩa đã làm rõ. Giữ hai cột nhãn ban đầu để đối chiếu.
+Sau khi so sánh và thảo luận, quy tắc phân biệt cho hai ca khác nhãn như sau:
+
+- **Ca 6 (Do người dùng vs. Ngữ cảnh):** Khách chọn sai phân loại ban đầu ("Hoàn phí giao trễ" thay vì hàng bị vỡ). Gốc lỗi trực tiếp bắt nguồn từ thao tác chọn sai của người dùng nên nhãn thống nhất là **Do người dùng**. Việc trợ lý thiếu khả năng phát hiện nội dung mô tả mâu thuẫn để gợi ý lại là cơ hội cải thiện thuộc về giải pháp khắc phục.
+- **Ca 8 (Hệ thống vs. Ngầm):** Trợ lý trích dẫn điều khoản không có thật ("Điều 7.2") trong văn bản trả lời khách hàng (hallucination). Dù số tiền hoàn vẫn đúng và khách hàng không phản ánh, nhưng sai phạm về căn cứ pháp lý đã hiển thị công khai trên giao diện người dùng (sai lệch đã lộ ra) chứ không phải ẩn giấu bên trong, nên nhãn thống nhất là **Hệ thống**.
 
 ## Bảng khắc phục cho 5 ca, mỗi loại một ca
 
-Biện pháp, event và ngưỡng dưới đây là gợi ý. Sau khi chốt nhãn, chọn một ca cho mỗi loại rồi chỉnh biện pháp theo dấu hiệu của ca đó. Mỗi event gắn `trace_id` để truy lại yêu cầu.
+Mỗi dòng xác định rõ cách phát hiện đo được qua event có `trace_id`, ngưỡng kích hoạt, tần suất giám sát và vai trò cụ thể chịu trách nhiệm.
 
 | Ca | Loại lỗi | Phát hiện bằng gì | Khắc phục thế nào | Ai phụ trách |
 | --: | --- | --- | --- | --- |
-| Chờ chọn | Do người dùng | Đếm `input_validation_failed` theo trường mỗi ngày. Chặn ngay khi 1 dữ liệu bắt buộc không hợp lệ. | Hiển thị lỗi tại trường, đưa ví dụ nhập đúng và giữ các thông tin đã điền. | Kỹ sư giao diện |
-| Chờ chọn | Hệ thống | Đối chiếu số tiền đề xuất với bộ tính theo chính sách trước mỗi lệnh hoàn. Kích hoạt `refund_policy_mismatch` khi lệch bất kỳ số tiền nào. | Tạm giữ lệnh, chuyển nhân viên xác nhận và thêm ca vào bộ kiểm thử chính sách. | Kỹ sư trợ lý hoàn phí |
-| Chờ chọn | Ngữ cảnh | Theo dõi `ticket_reopened` do khách hiểu khác thông báo. Rà nội dung khi có từ 3 ca cùng lý do trong 7 ngày. | Nêu rõ điều kiện và kết quả dự kiến ở bước xác nhận, sau đó thử lại với nhân viên CSKH. | PM trợ lý hoàn phí |
-| Chờ chọn | Giới hạn hệ thống | Ghi `handoff_to_staff` theo lý do. Kiểm mỗi ngày xem có yêu cầu ngoài phạm vi nào thiếu bản tóm tắt. | Nêu rõ giới hạn với khách và chuyển nhân viên kèm dữ liệu đã thu thập. | Trưởng nhóm CSKH |
-| Chờ chọn | Ngầm | Kiểm tra mẫu 50 giao dịch/tuần qua `audit_sample_checked`. Mở điều tra ngay khi có 1 giao dịch lệch. | Đối soát lại các giao dịch cùng quy tắc và sửa kết quả theo sổ cái sau khi xác minh. | Kế toán trưởng |
+| 9 | Do người dùng | Event `input_validation_failed` kèm `trace_id`; cảnh báo khi tỉ lệ vượt quá 2% tổng số yêu cầu/ngày. | Nhận diện mã đơn sàn TMĐT và tra cứu sang mã vận đơn LogiX; nếu không tra được thì hiển thị hướng dẫn kèm hình ảnh minh họa vị trí mã vận đơn và giữ nguyên thông tin đã điền. | PM trợ lý hoàn phí |
+| 7 | Hệ thống | Đối soát tự động mỗi giờ: phát hiện tin nhắn gửi khách "đã hoàn tiền" nhưng không có bản ghi sổ cái thành công (HTTP 200) cùng `trace_id`; ngưỡng kích hoạt cảnh báo là 0 ca (bất kỳ ca nào lệch). | Chỉ gửi thông báo hoàn tất khi API sổ cái trả mã thành công; nếu API trả lỗi 503 sau 3 lần thử lại, tự động chuyển trạng thái "đang xử lý" và chuyển tiếp nhân viên đối soát. | Kỹ sư trưởng agent |
+| 18 | Ngữ cảnh | Tỉ lệ yêu cầu bị mở lại (`ticket_reopened`) có `trace_id` vì khiếu nại số tiền mà kiểm tra lại thấy đúng chính sách; theo dõi hàng tuần. | Mẫu thông báo gửi khách luôn ghi chi tiết công thức và từng bước tính toán (ví dụ: Phí giao 30.000 đ × 50% mức trễ = 15.000 đ hoàn) thay vì chỉ gửi số tiền tổng. | Trưởng nhóm CSKH |
+| 4 | Giới hạn hệ thống | Event `handoff_to_staff` kèm `trace_id` với lý do `reason = thieu_du_lieu_doi_tac`, tổng hợp và giám sát theo ngày. | Duy trì cơ chế chuyển tiếp cho nhân viên kèm tóm tắt tự động thông tin đơn hàng; tạm thời loại trừ chặng đối tác quốc tế ra khỏi phạm vi pilot cho đến khi tích hợp API đối tác. | PM trợ lý hoàn phí |
+| 17 | Ngầm | Kiểm tra mẫu ngẫu nhiên 100 đơn/tuần so với bảng giá hiện hành qua `audit_sample_checked` kèm `trace_id`; ngưỡng cảnh báo $\ge 1\%$ số đơn bị lệch giá. | Tự động làm mới và xóa bộ nhớ đệm (cache invalidation) ngay khi có quyết định cập nhật bảng giá; bổ sung phiên bản bảng giá áp dụng vào trường metadata của `trace_id`. | Kế toán trưởng |
