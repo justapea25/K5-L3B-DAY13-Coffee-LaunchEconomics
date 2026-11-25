@@ -10,7 +10,7 @@
 | Dùng | % yêu cầu nhân viên can thiệp mở bằng trợ lý mỗi tuần | Trong số yêu cầu đủ phạm vi được phân lần đầu cho nhóm can thiệp trong tuần, đếm yêu cầu có `agent_opened` trong cùng tuần từ nhân viên thuộc nhóm, chia số yêu cầu nhóm này được phân. | Đo trong pilot |
 | An toàn | % giao dịch hoàn sai tiền trong mẫu hằng tuần | Đếm giao dịch được kiểm có `so_tien_da_hoan` khác `so_tien_dung`, chia tổng số giao dịch trong mẫu. | Đo trong pilot |
 
-Số tính thử từ [CSV yêu cầu](../../src/logix_requests.csv). Dùng cờ `dong_trong_24h` và `mo_lai_trong_7_ngay` cho chỉ số chính, `duoc_xem_lai` và `quyet_dinh_xem_lai` cho chỉ số dùng, `mo_lai_trong_7_ngay` cho chỉ số an toàn. Đây là kết quả mô tả đợt chạy thử. Tỉ lệ mở lại phụ thuộc việc khách phát hiện và báo lỗi. Kiểm mẫu và đối soát sổ cái bổ sung khả năng phát hiện lỗi tài chính ngầm.
+Số tính thử từ [CSV yêu cầu](../../src/logix_requests.csv). Dùng cờ `dong_trong_24h` và `mo_lai_trong_7_ngay` cho chỉ số chính, `duoc_xem_lai` và `quyet_dinh_xem_lai` cho chỉ số dùng, `mo_lai_trong_7_ngay` cho chỉ số an toàn. Đợt chạy thử chưa có nhóm đối chứng, nên các tỉ lệ này mô tả kết quả quan sát. Tỉ lệ mở lại phụ thuộc việc khách phát hiện và báo lỗi. Kiểm mẫu và đối soát sổ cái bổ sung khả năng phát hiện lỗi tài chính ngầm.
 
 ## Danh sách event
 
