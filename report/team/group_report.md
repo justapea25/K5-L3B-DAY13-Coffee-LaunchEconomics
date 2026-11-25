@@ -43,7 +43,9 @@ Cách làm: mọi con số tính từ `src/lab13.py` trên hai file CSV giả l�
 | Chốt cách đo phút xem lại, làm lại và điều kiện an toàn trước khi giảm xem lại | Trưởng nhóm CSKH | 04/12/2026 |
 
 - **Tiềm năng nhưng chưa đủ điều kiện bắt đầu:** trong phạm vi pilot, chi phí gồm xử lý thay và cố định ở 45.000 yêu cầu/tháng là 5.217 đ/yêu cầu, thấp hơn 56,5% so với 12.000 đ [simulated]; đây chưa phải tiết kiệm đã chứng minh. Hiện cả 4 điều kiện chưa đạt: ca 7, 17, 20 chưa kiểm thử, event chưa kiểm thử, thiết kế chưa được duyệt; nếu phải xem lại 100% thì lợi thế gần như mất hoặc âm (0,98–1,03× [simulated]). Nếu chưa đạt đủ thì lùi ngày bắt đầu và trình lại Giám đốc vận hành.
-- **Kết quả duyệt chéo:** cập nhật sau buổi Gate 2a.
+- **Kết quả duyệt chéo (hội đồng: nhóm ABCD):** đồng ý **Go có điều kiện**. Hội đồng đồng ý cách xử lý khi khoảng tin cậy chứa 0 (kết luận chưa đủ bằng chứng; power sát trần khoảng 71% với 20 nhân viên mỗi nhánh) và cách quy đổi xem lại 100% sang 12.850–13.466 đ/yêu cầu [simulated]. Hai góp ý nhóm đã sửa trong `pilot_plan.yaml`:
+  - Ngưỡng 520 là **mẫu hiệu dụng**; bậc 10 người có trần 500 nên chưa đủ. Luật lệch 2 điểm chuyển sang bậc 20 người, khi mỗi nhánh có ≥ 1.080 ca theo dõi đủ 7 ngày (≥ 54 ca/nhân viên).
+  - Mốc hoà vốn thời gian xem lại phụ thuộc thời gian làm lại (4,56 phút nếu làm lại 9 phút; 4,24 phút nếu 15,3 phút). Nhóm ghi trước điều kiện tăng bậc `rollout_gate`: thời gian xem lại đo thật ≤ 4,2 phút/ca.
 
 ## 5. Khó khăn và cách xử lý
 
