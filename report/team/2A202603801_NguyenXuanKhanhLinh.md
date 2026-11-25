@@ -4,7 +4,7 @@
 
 - **Họ tên** · Nguyễn Xuân Khánh Linh
 - **MSSV** · `2A202603801`
-- **Email trường** · `26ai.linhnxk@vinuni.edu.vn` (dự kiến theo mẫu nhóm, chờ xác nhận)
+- **Email trường** · `26ai.linhnxk2@vinuni.edu.vn`
 - **Nhóm và lớp** · Coffee, L3B
 - **Vai trò** · Người gắn nhãn 2 kiêm giữ hồ sơ Launch v0
 
