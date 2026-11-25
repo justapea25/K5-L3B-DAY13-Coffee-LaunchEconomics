@@ -2,10 +2,10 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
-- Lớp: L3A hoặc L3B
-- Repo nhóm: `K5-L3A-DAY13-TenNhom-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- Tên nhóm: Coffee
+- Lớp: L3B
+- Repo nhóm: `K5-L3B-DAY13-Coffee-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
+- URL repo, nhánh nộp, commit chốt: https://github.com/justapea25/K5-L3B-DAY13-Coffee-LaunchEconomics · nhánh `main` · commit chốt ghi sau khi push bản cuối
 
 ## Thành viên
 
@@ -37,16 +37,63 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
 
-## HoVaTen-MSSV
+## DauHoangMinh-2A202604011
 
 ### Phần việc phụ trách
 
--
+- Người viết code: `src/lab13.py` (nhiệm vụ A, B, D1) và bản đầu `report/team/pilot_plan.yaml` (nhiệm vụ D); báo cáo nhóm.
 
 ### Đóng góp cụ thể
 
--
+- Ba hàm A1 (ĐẠT 1,20 · 1,25 · 1,25), `mo_hinh`, A2–A4, B1–B4, cỡ mẫu D1 (1.251 · 3.103 · 1.000 · 300 · m ≥ 299).
+- `pilot_plan.yaml`: chia theo nhân viên 20 + 20, mde 0,06, phạm vi noi_dia + hang_nang, ba luật dừng đầu tiên.
+- `report/team/group_report.md`, phần thông tin nhóm trong `TEAM.md`.
 
 ### Bằng chứng
 
--
+- Commit `9c0d4e4`, `ce22d69`; báo cáo cá nhân `report/team/2A202604011_DauHoangMinh.md`.
+
+## DangMinhThu-2A202604009
+
+### Phần việc phụ trách
+
+- Người kiểm số: điền bảng chi phí, đặc tả chỉ số, kiểm số tay.
+
+### Đóng góp cụ thể
+
+- `report/team/bang_chi_phi.md`: A1–A4, B1–B4, mục "Kiểm số tay" (84.000 đ tool, 4.472 đ mỗi việc thành công).
+- `report/team/chi_so.md`: 3 chỉ số tính thử (82,83% · 27,12% · 4,25%), danh sách event có `trace_id`, các dòng rủi ro kinh tế.
+
+### Bằng chứng
+
+- Commit `f13e1dd`, `20d0c72`, `12a6a77`; báo cáo cá nhân `report/team/2A202604009_DangMinhThu.md`.
+
+## TruongVanHai-MSSV
+
+### Phần việc phụ trách
+
+- Người gắn nhãn 1: gắn nhãn độc lập 20 ca lỗi ở CP3.
+
+### Đóng góp cụ thể
+
+- Bộ nhãn độc lập trong `report/team/bang_loi.md`, tỉ lệ đồng thuận 18/20 (90%), quy tắc phân biệt ca 6 và ca 8, bảng khắc phục 5 ca đủ năm loại.
+
+### Bằng chứng
+
+- Commit `7ef7b61` (PR #2 `hai/cp3-bang-loi`).
+
+## NguyenXuanKhanhLinh-MSSV
+
+### Phần việc phụ trách
+
+- Người gắn nhãn 2 kiêm giữ hồ sơ: gắn nhãn độc lập 20 ca lỗi, điền hồ sơ launch v0.
+
+### Đóng góp cụ thể
+
+- Bộ nhãn độc lập và 20 tình huống trong `report/team/bang_loi.md`; điền tên và vai trong `TEAM.md`.
+- `report/team/ho_so_launch_v0.md`: bảy mục và đề xuất cuối.
+- Hoàn thiện `report/team/pilot_plan.yaml` (phần theo dõi, năm luật dừng); rà và đồng bộ số trong `bang_chi_phi.md`, `chi_so.md`.
+
+### Bằng chứng
+
+- Commit `c5de251`, `7b46552`.
