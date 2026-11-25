@@ -18,7 +18,7 @@ Người viết code: viết `src/lab13.py` cho nhiệm vụ A (mô hình chi ph
 - **A3, A4:** tách theo `loai` (quoc_te 22.515 đ = 1,88× [simulated], tỉ lệ ok lần 1 → 3 chỉ còn 30,0% → 2,2%); cộng chi phí cố định 40 triệu/tháng cho phạm vi noi_dia + hang_nang: **4.599 đ = 0,38×** ở 45.000 yêu cầu/tháng [simulated].
 - **B1–B4:** 9 kịch bản độ nhạy, xếp hạng làm lại +51,8% · xem lại +40,7% · lương +23,1% [simulated]; giới hạn 2 lần chạy rẻ nhất cho cả hệ thống (6.901.220 đ); xem lại 100% đưa chi phí lên 11.743 đ = 0,98× (12.415 đ = 1,03× với 15,3 phút làm lại) [simulated].
 - **D1:** hàm `co_mau` và `m_toi_thieu`: 1.251 · 3.103 (42 người/nhóm, không đủ) · trần 1.000 · trần 300 · m ≥ 299 với mức chênh 6 điểm; power còn 0,64 nếu tác động thật chỉ 5 điểm.
-- **D:** `pilot_plan.yaml`: chia theo nhân viên 20 + 20, phạm vi noi_dia + hang_nang, mde 0,06 (đánh đổi ghi rõ), ba luật dừng đủ NẾU – TRONG – THÌ – KHÔNG THÌ; ngưỡng an toàn đặt theo tỉ lệ mở lại hiện tại 3,97% trong phạm vi (không dùng ngưỡng tuyệt đối 3% vì sẽ dừng ngay tuần đầu).
+- **D:** `pilot_plan.yaml`: chia theo nhân viên 20 + 20, phạm vi noi_dia + hang_nang, mde 0,06 (đánh đổi ghi rõ), ba luật dừng đầu tiên đủ NẾU – TRONG – THÌ – KHÔNG THÌ (người giữ hồ sơ sau đó bổ sung phần theo dõi và tách thành năm luật); ngưỡng an toàn đặt theo tỉ lệ mở lại hiện tại 3,97% trong phạm vi (không dùng ngưỡng tuyệt đối 3% vì sẽ dừng ngay tuần đầu).
 
 ## 4. Bằng chứng
 
@@ -28,7 +28,7 @@ Người viết code: viết `src/lab13.py` cho nhiệm vụ A (mô hình chi ph
 
 ## 5. Công cụ AI đã dùng
 
-Claude Code: đọc đề và hướng dẫn trong `docs/`, gợi ý và viết code `lab13.py`, soạn nháp `pilot_plan.yaml`. Tự kiểm tra: chạy ba phép thử A1; đối chiếu từng số A2, A3, B1, B3, B4, D1 với số tự kiểm trong `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md` (lệch 0%); kiểm "giảm một nửa" bằng nửa "gấp đôi" (5,6 → 2,8; 40,7 → 20,3); người kiểm số (Minh Thu) tính tay độc lập ra cùng 84.000 đ tool và 4.472 đ; kiểm tra file YAML và từ cấm "production".
+Claude Code: đọc đề và hướng dẫn trong `docs/`, gợi ý và viết code `lab13.py`, soạn nháp `pilot_plan.yaml`. Tự kiểm tra: chạy ba phép thử A1; đối chiếu từng số A2, A3, B1, B3, B4, D1 với số tự kiểm trong `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md` (lệch 0%); kiểm "giảm một nửa" bằng nửa "gấp đôi" (5,6 → 2,8; 40,7 → 20,3); người kiểm số (Minh Thu) tính tay độc lập ra cùng 84.000 đ tool và 4.472 đ; kiểm tra file YAML và rà từ cấm của lab bằng grep.
 
 ## 6. Tự đánh giá
 
