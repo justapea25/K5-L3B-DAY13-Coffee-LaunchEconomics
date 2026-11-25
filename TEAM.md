@@ -5,7 +5,7 @@
 - Tên nhóm: Coffee
 - Lớp: L3B
 - Repo nhóm: `K5-L3B-DAY13-Coffee-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/justapea25/K5-L3B-DAY13-Coffee-LaunchEconomics · nhánh `main` · commit chốt ghi sau khi push bản cuối
+- URL repo, nhánh nộp, commit chốt: https://github.com/justapea25/K5-L3B-DAY13-Coffee-LaunchEconomics · nhánh `main` · commit chốt nội dung `a9f0086` (commit cuối trên `main` trước hạn là bản nộp)
 
 ## Thành viên
 
@@ -14,7 +14,7 @@
 |   1 | Đậu Hoàng Minh | 2A202604011 | 26ai.minhdh4@vinuni.edu.vn | justapea25 | Người viết code |
 |   2 | Đặng Minh Thu | 2A202604009 | 26ai.thudm@vinuni.edu.vn | minhthu27 | Người kiểm số, viết code từ CP3 |
 |   3 | Trương Văn Hải | 2A202604018 | truongvanhai868@gmail.com | haihai868 | Người gắn nhãn 1 |
-|   4 | Nguyễn Xuân Khánh Linh | | | linkiewinkie | Người gắn nhãn 2 kiêm giữ hồ sơ |
+|   4 | Nguyễn Xuân Khánh Linh | 2A202603801 | 26ai.linhnxk2@vinuni.edu.vn | linkiewinkie | Người gắn nhãn 2 kiêm giữ hồ sơ |
 
 Bốn vai của lab:
 
@@ -82,7 +82,7 @@ Sao chép mục dưới đây cho từng thành viên.
 
 - Commit `7ef7b61` (PR #2 `hai/cp3-bang-loi`); báo cáo cá nhân `report/team/2A202604018_TruongVanHai.md` (commit `1e470f5`).
 
-## NguyenXuanKhanhLinh-MSSV
+## NguyenXuanKhanhLinh-2A202603801
 
 ### Phần việc phụ trách
 
@@ -96,4 +96,4 @@ Sao chép mục dưới đây cho từng thành viên.
 
 ### Bằng chứng
 
-- Commit `c5de251`, `7b46552`, `2887a0d`, `b026973`, `b26c4df`, `b9b84ca`.
+- Commit `c5de251`, `7b46552`, `2887a0d`, `b026973`, `b26c4df`, `b9b84ca`; báo cáo cá nhân `report/team/2A202603801_NguyenXuanKhanhLinh.md` (commit `128b6a6`, `bf193d4`).
