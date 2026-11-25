@@ -27,4 +27,12 @@ Phạm vi đề xuất gồm yêu cầu nội địa (`noi_dia`) và hàng nặn
 
 **Điều kiện quay lại Gate 2a** · Kỹ sư trưởng agent kiểm thử ca **7, 17 và 20** để xác nhận trợ lý báo hoàn tất sau khi ghi sổ, áp dụng đúng phiên bản bảng giá và ghi sổ tối đa **1** giao dịch cho mỗi khoản hoàn được phép. Người kiểm số kiểm thử việc đo **5 chỉ số từ 13 event** và đối soát thông báo với sổ cái. Giám đốc vận hành phê duyệt thiết kế **20 + 20** và **5** luật dừng, đồng thời chấp nhận power khoảng **64%** ở chênh lệch **5 điểm %**. Trưởng nhóm CSKH chốt cách đo phút xem lại, làm lại và điều kiện an toàn trước khi giảm tỉ lệ xem lại.
 
-**Đề xuất · No-go tại lần rà soát này.** Khi có bằng chứng cho các điều kiện trên, nhóm sẽ trình lại phương án **Go có điều kiện** cho nội địa và hàng nặng.
+**Đề xuất · Đề xuất: GO CÓ ĐIỀU KIỆN (Conditional Go).**
+
+Nhóm Coffee đề xuất phê duyệt kế hoạch pilot có kiểm soát cho phạm vi yêu cầu nội địa và hàng nặng. Kết quả phân tích kinh tế giả lập cho thấy chi phí ước tính khoảng 5.217 đ/yêu cầu, thấp hơn 56,5% so với mức 12.000 đ khi nhân viên tự xử lý. Tuy nhiên, đây chưa phải kết quả tiết kiệm đã được chứng minh trong thực tế.
+
+Trước khi bắt đầu pilot, nhóm yêu cầu hoàn thành kiểm thử cơ chế chống hoàn tiền trùng, đối soát sổ cái trước khi gửi thông báo hoàn thành, xác nhận cập nhật bảng giá, kiểm thử hệ thống event và được Giám đốc vận hành phê duyệt thiết kế thử nghiệm 20 nhân viên sử dụng AI và 20 nhân viên đối chứng.
+
+Pilot chỉ được bắt đầu khi tất cả điều kiện an toàn bắt buộc được xác nhận. Trong quá trình thử nghiệm, nhóm áp dụng 5 luật dừng và cơ chế rollback để bảo vệ khách hàng và doanh nghiệp.
+
+Nếu các điều kiện không được đáp ứng, quyết định phê duyệt có điều kiện không có hiệu lực triển khai và nhóm phải quay lại Gate 2a để đánh giá lại.
